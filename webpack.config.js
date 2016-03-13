@@ -18,6 +18,9 @@ module.exports = {
     { 
     	test: /\.png$/, loader: 'file' 
     },
+    { 
+        test: /\.m4v$/, loader: 'file' 
+    },
     {
         test: /\.js$/, exclude: /node_modules/, loader: 'babel'
     }

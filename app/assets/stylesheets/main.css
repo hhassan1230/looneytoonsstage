@@ -1,11 +1,19 @@
 body {
-  background-image: url("../images/curtainsFront.png");
+/*  background-image: url("../images/curtainsFront.png");
+  background-size: 100% auto;
+  background-repeat: no-repeat;*/
 }
 
-.singbox{
-	margin-right:auto;
-	margin-left:auto;
-	border-radius: 60%;
-	border-color: blue;
+.videoContainer{
+	width: 100%;
+	height: 100%;
+	position: relative;
+}
+
+.video{
+	position: absolute;
+	width: 50%;
+	left: 25%;
+	top: 330px; 
 }
 
