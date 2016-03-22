@@ -1,0 +1,26 @@
+body {
+
+	.stageBg{
+		position: absolute;
+		width: 100%;
+		height: 100%;
+		top: 0;
+		left: 0;
+		z-index: 1;
+		background-image: url("../images/curtainsBack.png");
+	  background-size: 100% auto;
+	  background-repeat: no-repeat;
+	}
+
+	.curtainBg{
+		position: absolute;
+		width: 100%;
+		height: 100%;
+		top: 0;
+		left: 0;
+		z-index: 2;
+		background-image: url("../images/curtainsFront.png");
+	  background-size: 100% auto;
+	  background-repeat: no-repeat;
+	}
+}

@@ -31,6 +31,7 @@ export default class Sing extends React.Component{
   finally = () =>{
   	this.setState({
   		videoUrl: 'http://hhassan1230.github.io/CodePenImgs/imagesLesson1/finally.m4v',
+  		loop: false,
   		grandfinally: true
   	})
   }
@@ -39,6 +40,7 @@ export default class Sing extends React.Component{
       isPlaying: false,
       position: {x: 0, y: 0},
       grandfinally: false,
+      loop: true,
       videoUrl: 'http://hhassan1230.github.io/CodePenImgs/imagesLesson1/TIEADJUSTMENTNERVOUS.m4v'
     });
   }
@@ -46,14 +48,14 @@ export default class Sing extends React.Component{
   changeTone = (event) => {
   	let { clientX, clientY } = event;
     let { top, right, bottom, left } = event.target.getBoundingClientRect();
-    if (this.state.position.y > (clientY + 50)) {
+    if (this.state.position.y > (clientY + 150)) {
     	// low
     	if (!this.state.grandfinally) {
 		    this.setState({
 		  		videoUrl: 'http://hhassan1230.github.io/CodePenImgs/imagesLesson1/normalsing2.m4v'
 		  	})
     	}
-    } else if (this.state.position.y < (clientY - 50)) {
+    } else if (this.state.position.y < (clientY - 150)) {
     	// high
     	if (!this.state.grandfinally) {
 	    	this.setState({
@@ -73,24 +75,24 @@ export default class Sing extends React.Component{
 		return (
 			<div>
         <pre>{JSON.stringify(this.state.position)}</pre>
-			<div className={styles.videoContainer} 
-			onMouseEnter={this.play}         
-			onMouseLeave={this.stop}
-			onMouseUp={this.finally}
-      onMouseMove={this.changeTone} >
+  			<div className={styles.videoContainer} 
+  			 onMouseEnter={this.play}         
+  			 onMouseLeave={this.stop}
+  			 onMouseUp={this.finally}
+          onMouseMove={this.changeTone} >
 
-				<ReactVideo
-					className={styles.video}
-        	ref={'VideoComp'}
-        	cls={'custom-video'} 
-        	muted={false}
-        	autoPlay={true}
-        	loop={true}
-        	controls={false}
-        	src={this.handlePlaying()} >
-      	</ReactVideo>
-			  </div>
-			  </div>
+  				   <ReactVideo
+                className={styles.video}
+                ref={'VideoComp'}
+                cls={'custom-video'} 
+                muted={false}
+                autoPlay={true}
+                loop={this.state.loop}
+                controls={false}
+                src={this.handlePlaying()} >
+        	 </ReactVideo>
+  			 </div>
+			 </div>
 		)
 	}
 }
