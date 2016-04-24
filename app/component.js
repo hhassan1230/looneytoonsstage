@@ -74,7 +74,7 @@ export default class Sing extends React.Component{
 	render(){
 		return (
 			<div>
-        <pre>{JSON.stringify(this.state.position)}</pre>
+        {/*<pre>{JSON.stringify(this.state.position)}</pre>*/}
   			<div className={styles.videoContainer} 
   			 onMouseEnter={this.play}         
   			 onMouseLeave={this.stop}
