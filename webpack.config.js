@@ -3,7 +3,7 @@ var path = require('path');
 module.exports = {
 	entry: [
 		'webpack/hot/dev-server',
-    'webpack-dev-server/client?http://localhost:8080',
+    'webpack-dev-server/client?http://localhost:8081',
 		path.resolve(__dirname, 'app/main.js')
 	],
 	output: {
@@ -16,7 +16,7 @@ module.exports = {
     	test: /\.css$/, loader: 'style!css?modules' 
     },
     { 
-    	test: /\.png$/, loader: 'file' 
+    	test: /\.png$/, loader: 'file'
     },
     { 
         test: /\.m4v$/, loader: 'file' 
